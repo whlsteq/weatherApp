@@ -44,7 +44,7 @@
 
         <Border  Grid.Row="1">
             <Grid>
-                <Image x:Name="img_temp" Visibility="Hidden" gif:AnimationBehavior.SourceUri="Resources/snow.gif" gif:AnimationBehavior.AutoStart="True"/>
+                <Image x:Name="img_snow" gif:AnimationBehavior.SourceUri="Resources/snow.gif" Visibility="Hidden"/>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Label x:Name="lbl_temp" Content="Temp" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFD408" Background="{x:Null}" FontSize="36"/>
                 </StackPanel>

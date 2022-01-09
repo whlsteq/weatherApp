@@ -41,14 +41,19 @@ namespace weatherApp
             {
                 getWeather();
                 sec = 0;
-                if (weatherApi.Description.Equals("Kar Yağışlı"))
+                if (weatherApi.Description.Equals("kar yağışlı")|| weatherApi.Description.Equals("hafif kar yağışlı"))
                 {
-                    img_temp.Dispatcher.Invoke(new Action(() =>
+                    img_snow.Dispatcher.Invoke(new Action(() =>
                     {
-                        img_temp.Visibility = Visibility.Visible;
+                        img_snow.Visibility = Visibility.Visible;
                     }));
-                    
                 }
+                else {
+                    img_snow.Dispatcher.Invoke(new Action(() =>
+                    {
+                        img_snow.Visibility = Visibility.Hidden;
+                    }));
+            }
             }
         }
 

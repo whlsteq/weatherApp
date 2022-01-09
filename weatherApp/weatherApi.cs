@@ -39,7 +39,7 @@ namespace weatherApp
 
              Name=weather.Descendants("city").ElementAt(0).Attribute("name").Value;
              Temp = weather.Descendants("temperature").ElementAt(0).Attribute("value").Value;
-             Description = weather.Descendants("weather").ElementAt(0).Attribute("value").Value;
+             Description = weather.Descendants("weather").ElementAt(0).Attribute("value").Value.ToLower();
         }
 
     }
