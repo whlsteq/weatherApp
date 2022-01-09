@@ -4,9 +4,74 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:weatherApp"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="199" Width="530"
+        AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
+    <Window.Background>
+        <SolidColorBrush Opacity="0.07" Color="Azure"></SolidColorBrush>
+    </Window.Background>
     <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="80*"/>
 
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="1" Content="X&#xD;&#xA;" HorizontalAlignment="Right" VerticalAlignment="Center" Height="20" Width="15" Click="Button_Click" Background="{x:Null}" FontWeight="Bold" FontSize="11" RenderTransformOrigin="-0.625,0.433" Foreground="Red" BorderBrush="{x:Null}"/>
+
+
+        <Border Grid.Row="0" Grid.Column="0">
+            <Grid>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label x:Name="lbl_appName" Content="Weather Application" Background="Transparent" FontWeight="Bold" Foreground="White"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="1">
+            <Grid>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBox x:Name="txt_city" Text="Şehir adı Giriniz" Foreground="Goldenrod" Background="Transparent"
+                             KeyDown="OnKeyDownHandler"/>
+                </StackPanel>
+                <GridSplitter HorizontalAlignment="Left" Height="24" VerticalAlignment="Center" Width="5" Background="#FF6E7171" FontSize="10" IsEnabled="False"/>
+            </Grid>
+        </Border>
+
+        <Border  Grid.Row="1">
+            <Grid>
+                <Image x:Name="img_temp" Visibility="Hidden" gif:AnimationBehavior.SourceUri="Resources/snow.gif" gif:AnimationBehavior.AutoStart="True"/>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label x:Name="lbl_temp" Content="Temp" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFD408" Background="{x:Null}" FontSize="36"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+
+        <Border Grid.Row="1" Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label x:Name="lbl_name" Content="name" HorizontalAlignment="Center" Background="{x:Null}" Foreground="White" FontSize="36"/>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label x:Name="lbl_description" Content="description" HorizontalAlignment="Center" Background="{x:Null}" Foreground="White" FontSize="36"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+  
     </Grid>
+    
+
 </Window>
